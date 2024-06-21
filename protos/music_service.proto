@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package music;
+
+service MusicService {
+    rpc PredictGenre (MusicRequest) returns (MusicResponse);
+}
+
+message MusicRequest {
+    string audio_path = 1;
+}
+
+message MusicResponse {
+    string genre = 1;
+    string emotion = 2;
+    string style = 3;
+}
